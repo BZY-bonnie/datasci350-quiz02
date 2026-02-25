@@ -20,8 +20,9 @@ fig = px.scatter(
     log_x=True,
     labels={
         "population_millions": "Population (millions, log scale)",
-        "life_expectancy": "Life Expectancy"
+        "life_expectancy": "Life Expectancy (years)"
     },
     title="Life Expectancy vs Population Over Time"
 )
 fig.show()
+```

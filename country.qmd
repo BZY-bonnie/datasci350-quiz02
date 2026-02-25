@@ -1,0 +1,40 @@
+---
+title: "Country Analysis"
+---
+
+This page analyzes changes in life expectancy, GDP per capita, and population over time for one country.
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv("gapminder.csv")
+
+country_name = "China"
+d = df[df["country"] == country_name].sort_values("year")
+
+d_long = d.melt(
+    id_vars=["year"],
+    value_vars=["life_expectancy", "gdp_per_capita", "population_millions"],
+    var_name="metric",
+    value_name="value"
+)
+
+pretty = {
+    "life_expectancy": "Life Expectancy",
+    "gdp_per_capita": "GDP per Capita",
+    "population_millions": "Population (millions)"
+}
+d_long["metric"] = d_long["metric"].map(pretty)
+
+fig = px.line(
+    d_long,
+    x="year",
+    y="value",
+    color="metric",
+    markers=True,
+    title=f"{country_name}: Trends Over Time",
+    labels={"year": "Year", "value": "Value", "metric": "Metric"}
+)
+fig.show()
+```
