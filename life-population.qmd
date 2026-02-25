@@ -1,0 +1,27 @@
+---
+title: "Life Expectancy and Population"
+---
+
+This page analyzes how life expectancy relates to population (in millions) over time.
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv("gapminder.csv")
+
+fig = px.scatter(
+    df,
+    x="population_millions",
+    y="life_expectancy",
+    color="continent",
+    hover_name="country",
+    animation_frame="year",
+    log_x=True,
+    labels={
+        "population_millions": "Population (millions, log scale)",
+        "life_expectancy": "Life Expectancy"
+    },
+    title="Life Expectancy vs Population Over Time"
+)
+fig.show()
