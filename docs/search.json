@@ -30,9 +30,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "datasci350-quiz02",
+    "title": "Home",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Gapminder is a dataset covering life expectancy, population, and GDP per capita for 142 countries from 1952 to 2007 (every 5 years)."
+  },
+  {
+    "objectID": "index.html#pages",
+    "href": "index.html#pages",
+    "title": "Home",
+    "section": "Pages",
+    "text": "Pages\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis"
   },
   {
     "objectID": "life-population.html",
